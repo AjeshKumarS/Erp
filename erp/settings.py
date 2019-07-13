@@ -35,6 +35,11 @@ AUTH_USER_MODEL = 'accounts.User'
 
 INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
+    'invoice.apps.InvoiceConfig',
+    'items.apps.ItemsConfig',
+    'po.apps.PoConfig',
+    'pr.apps.PrConfig',
+    'suppliers.apps.SuppliersConfig',
     'pages.apps.PagesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
