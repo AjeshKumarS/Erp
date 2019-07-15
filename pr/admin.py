@@ -10,7 +10,7 @@ class PRHeadAdmin(admin.ModelAdmin):
 
 
 class PRDetailAdmin(admin.ModelAdmin):
-	list_display = ('pr_head', 'item', 'supplier', 'qty', 'amt', 'tax')
+	list_display = ('pr_head', 'item', 'supplier', 'quantity', 'amount', 'tax')
 	list_display_links = ('pr_head', 'item', 'supplier',)
 	search_fields = ('pr_head', 'item', 'supplier',)
 	list_per_page = 30

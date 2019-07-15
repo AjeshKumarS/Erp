@@ -10,7 +10,7 @@ class POHeadAdmin(admin.ModelAdmin):
 
 
 class PODetailAdmin(admin.ModelAdmin):
-	list_display = ('po_head', 'item', 'supplier', 'qty', 'amt', 'tax')
+	list_display = ('po_head', 'item', 'supplier', 'quantity', 'amount', 'tax')
 	list_display_links = ('po_head', 'item', 'supplier',)
 	search_fields = ('po_head', 'item', 'supplier',)
 	list_per_page = 30

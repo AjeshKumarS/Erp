@@ -11,7 +11,7 @@ class InvoiceHeadAdmin(admin.ModelAdmin):
 	
 	
 class InvoiceDetailAdmin(admin.ModelAdmin):
-	list_display = ('invoice_head', 'item', 'supplier', 'qty', 'amt', 'tax')
+	list_display = ('invoice_head', 'item', 'supplier', 'quantity', 'amount', 'tax')
 	list_display_links = ('invoice_head', 'item', 'supplier',)
 	search_fields = ('invoice_head', 'item', 'supplier',)
 	list_per_page = 30
