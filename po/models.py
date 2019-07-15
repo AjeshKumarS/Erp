@@ -7,7 +7,7 @@ from items.models import Item
 class POHead(models.Model):
 	po_no = models.AutoField(primary_key=True)
 	po_date = models.DateTimeField(default=timezone.now)
-	appr_date = models.DateTimeField(default=timezone.now)
+	approved_date = models.DateTimeField(default=timezone.now)
 	
 	def __str__(self):
 		return str(self.po_no) + " ----- " + str(self.po_date.date())
@@ -17,8 +17,8 @@ class PODetail(models.Model):
 	po_head = models.ForeignKey(POHead, on_delete=models.CASCADE)
 	item = models.ForeignKey(Item, on_delete=models.CASCADE)
 	supplier = models.ForeignKey(Supplier, on_delete=models.CASCADE)
-	qty = models.IntegerField()
-	amt = models.IntegerField()
+	quantity = models.IntegerField()
+	amount = models.IntegerField()
 	tax = models.IntegerField()
 	
 	class Meta:

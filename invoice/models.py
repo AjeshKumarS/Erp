@@ -16,8 +16,8 @@ class InvoiceDetail(models.Model):
 	invoice_head = models.ForeignKey(InvoiceHead, on_delete=models.CASCADE)
 	item = models.ForeignKey(Item, on_delete=models.CASCADE)
 	supplier = models.ForeignKey(Supplier, on_delete=models.CASCADE)
-	qty = models.IntegerField()
-	amt = models.IntegerField()
+	quantity = models.IntegerField()
+	amount = models.IntegerField()
 	tax = models.IntegerField()
 	
 	class Meta:

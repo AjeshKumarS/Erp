@@ -13,7 +13,7 @@ db.sqlite3
 /static
 .dist
 .vscode
-
+/venv
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
 # in your Git repository. Update and uncomment the following line accordingly.
@@ -114,15 +114,7 @@ celerybeat-schedule
 *.sage.py
 
 # Environments
-.env
-.venv
-.vene
-env/
-venv/
-vene/
-ENV/
-env.bak/
-venv.bak/
+
 
 # Spyder project settings
 .spyderproject
@@ -224,4 +216,6 @@ fabric.properties
 # Sonarlint plugin
 .idea/sonarlint
 
-# End of https://www.gitignore.io/api/django,pycharm
+# End of https://www.gitignore.io/api/django,pycharmvene
+vene
+vene
