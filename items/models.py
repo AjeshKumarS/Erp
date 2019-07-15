@@ -9,7 +9,6 @@ class Uom(models.Model):
         return self.uom
 
 
-
 class Item(models.Model):
     item_code = models.IntegerField(primary_key = True)
     item_desc = models.CharField(max_length = 300)
