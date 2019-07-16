@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% load humanize %}j
+
+{% block title %} | Search Results {% endblock %}
+
+{% block content %}
+<section id="showcase-inner" class="showcase-search text-white py-5">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <form action="{% url 'pr_dtl' %}">
+            <!-- Form Row 1 -->
+            <div class="form-row">
+              
+
+              <div class="col-md-4 mb-3">
+                <label class="sr-only">pr_no</label>
+                <input type="text" name="pr_no" class="form-control" placeholder="pr_no" value="{{ values.pr_no }}">
+              </div>
+
+            <div class="col-md-4 mb-3">
+                <label class="sr-only">sup_code</label>
+                <input type="text" name="sup_code" class="form-control" placeholder="sup_code" value="{{ values.sup_code }}">
+              </div>
+              
+            <!-- Form Row 2 -->
+            <div class="col-md-4 mb-3">
+                <label class="sr-only">item_desc</label>
+                <input type="text" name="item_desc" class="form-control" placeholder="item_desc" value="{{ values.item_desc }}">
+              </div>
+
+              <div class="col-md-4 mb-3">
+                <label class="sr-only">pr_date</label>
+                <input type="text" name="pr_date" class="form-control" placeholder="pr_date" value="{{ values.pr_date }}">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label class="sr-only">appr_date</label>
+                <input type="text" name="appr_date" class="form-control" placeholder="appr_date" value="{{ values.appr_date }}">
+              </div>
+             
+            
+            <button class="btn btn-secondary btn-block mt-4" type="submit">Submit form</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <section id="bc" class="mt-3">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="{% url 'index' %}">
+              <i class="fas fa-home"></i> Home</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="{% url 'listings' %}">Browse Listings</a>
+          </li>
+          <li class="breadcrumb-item active"> Search Results</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Listings -->
+  <section id="listings" class="py-4">
+    <div class="container">
+      <div class="row">
+        {% if listings %}
+          {% for listing in listings %}
+          <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card listing-preview">
+                
+                <div class="col-6">
+                      <i class="fas fa-bath"></i> PO NO: {{ listing.po_no }}</div>
+                  </div>
+                  <hr>
+                <div class="col-6">
+                      <i class="fas fa-bath"></i> PR Date: {{ listing.pr_date }}</div>
+                  </div>
+                  <hr>
+                  <div class="col-6">
+                      <i class="fas fa-bath"></i>Approved Date: {{ listing.appr_date }}</div>
+                  </div>
+                  <hr>
+                  <div class="col-6">
+                      <i class="fas fa-bath"></i> Tax: {{ listing.tax}}</div>
+                  </div>
+                  <hr>
+                  <div class="col-6">
+                      <i class="fas fa-bath"></i> Amount: {{ listing.amt}}</div>
+                  </div>
+                  <hr>
+                  <div class="col-6">
+                      <i class="fas fa-bath"></i>qty: {{ listing.qty}}</div>
+                  </div>
+                  <hr>
+                 
+                 
+             
+            </div>
+          {% endfor %}
+        {% else %}
+          <div class="col-md-12">
+            <p>No Listings Available</p>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+  {% endblock %}
