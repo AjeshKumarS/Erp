@@ -16,10 +16,10 @@ def unique_slug_generator(instance, new_slug=None):
     if new_slug is not None:
         slug = new_slug
     else:
-        slug = slugify(instance.f_name + " " + instance.comp_name)
+        slug = slugify(instance.first_name + " " + instance.company_name)
 
     Klass = instance.__class__
-    qs_exists = Klass.objects.filter(sup_code=slug).exists()
+    qs_exists = Klass.objects.filter(supplier_code=slug).exists()
     if qs_exists:
         new_slug = "{slug}-{randstr}".format(
                     slug=slug,
