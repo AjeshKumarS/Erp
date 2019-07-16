@@ -11,7 +11,7 @@ class Uom(models.Model):
 
 class Item(models.Model):
 	item_code = models.AutoField(primary_key=True)
-	item_desc = models.CharField(max_length=300)
+	item_description = models.CharField(max_length=300)
 	price = models.IntegerField()
 	uom = models.ForeignKey(Uom, on_delete=models.CASCADE)
 	

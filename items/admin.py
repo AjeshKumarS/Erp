@@ -3,9 +3,9 @@ from .models import Item, Uom
 
 
 class ItemAdmin(admin.ModelAdmin):
-	list_display = ('item_code', 'item_desc', 'price', 'uom')
-	list_display_links = ('item_code', 'item_desc')
-	search_fields = ('item_code', 'item_desc')
+	list_display = ('item_code', 'item_description', 'price', 'uom')
+	list_display_links = ('item_code', 'item_description')
+	search_fields = ('item_code', 'item_description')
 	list_per_page = 30
 
 
