@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  <section id="showcase-inner" class="py-5 text-white">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h1 class="display-4">PO DETAILS</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Breadcrumb -->
+  <section id="bc" class="mt-3">
+    <div class="container">
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="{% url 'index' %}">Home</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="{% url 'po_head' %}">po</a>
+          </li>
+          <li class="breadcrumb-item active">PO DETAILS</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Listing -->
+  <section id="listing" class="py-4">
+    <div class="container">
+      <a href="{% url 'index' %}" class="btn btn-light mb-4">Back To Main Search Page</a>
+      <div class="row">
+        <div class="col-md-9">
+         
+         
+          <!-- Fields -->
+          <div class="row mb-5 fields">
+            <div class="col-md-6">
+              <ul class="list-group list-group-flush">
+               <style>
+               table { empty-cells: show; 
+               border-spacing: 0.5rem;
+               white-space: pre-wrap;
+               table-layout:auto;}
+                  
+                  </style>
+                  
+                    {% for post in posts %}
+                    <li class="list-group-item text-secondary">
+                    PO NO:
+                      <span class="float-right">{{post.po_no}}
+                      </span>
+                    </li>
+                    <li class="list-group-item text-secondary">
+                      PO date:
+                      <span class="float-right">{{post.po_date|date:"F d, Y"}}</span>
+                    </li>
+                    <li class="list-group-item text-secondary">
+                      Supplier Code:
+                      <span class="float-right">{{post.sup_code}}</span>
+                    </li>
+                    
+                    <table style="width:100%"  class="table table-bordered">
+                    <thead>  
+                    <tr>
+                      <th  class="text-secondary" style="text-align:center;">Item Code</th>
+                      <th   class="text-secondary" style="text-align:center;">TAX</th>
+                      <th   class="text-secondary" style="text-align:center;">Amount</th>
+                      <th  class="text-secondary" style="text-align:center;">Quantity</th>
+                    </tr>
+                    </thread>
+                    <tbody> 
+                    <tr>
+                      <td scope="row" class=" text-secondary" style="text-align:center;">{{post.item_code}}</td>
+                      <td class=" text-secondary" style="text-align:center;">{{post.tax}}</td>
+                      <td class=" text-secondary" style="text-align:center;">{{post.amt}}</td>
+                      <td class=" text-secondary" style="text-align:center;">{{post.qty}}</td>
+                    </tr>
+                    </tbody>       
+                    </table>
+                    {% endfor %}
+        
+                
+              </ul>
+            </div>
+
+            
+          </div> 
+
+         
+
+ {% endblock %}

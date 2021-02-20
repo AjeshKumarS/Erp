@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+  <!-- Showcase -->
+  <section id="showcase">
+    <div class="container text-center">
+      <div class="home-search p-5">
+        <div class="overlay p-5">
+          <h1 class="display-4 mb-4">
+            ERP SEARCH ENGINE
+          </h1>
+          
+          <div class="search">
+            <form action="{% url 'pr_dtl' %}">
+              <!-- Form Row 1 -->
+              <div class="form-row">
+                <div class="col-md-4 mb-3">
+                  <label class="sr-only">PR NUMBER</label>
+                  <input type="text" name="PR_NUMBER" class="form-control" placeholder="PR NUMBER">
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label class="sr-only">PR DATE</label>
+                  <input type="text" name="PR_DATE" class="form-control" placeholder="PR DATE">
+                </div>
+		
+		<div class="col-md-4 mb-3">
+                  <label class="sr-only">Supplier Code</label>
+                  <input type="text" name="PR_DATE" class="form-control" placeholder="DESCRIPTION">
+                </div>
+
+		<div class="col-md-4 mb-3">
+                  <label class="sr-only">Approved DATE</label>
+                  <input type="text" name="PR_DATE" class="form-control" placeholder="APPROVED DATE">
+                </div>
+
+		<div class="col-md-4 mb-3">
+                  <label class="sr-only">Description</label>
+                  <input type="text" name="PR_DATE" class="form-control" placeholder="SUPPLIER CODE">
+                </div>
+                
+              </div>
+              <!-- Form Row 2 -->
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label class="sr-only">BUTTON</label>          
+              <button class="btn btn-secondary btn-block mt-4" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+       
+
+  
+
+  {% endblock %}

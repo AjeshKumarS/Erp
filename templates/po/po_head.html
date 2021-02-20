@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+  <!-- Showcase -->
+  <section id="showcase">
+    <div class="container text-center">
+      <div class="home-search p-5">
+        <div class="overlay p-5">
+          <h1 class="display-4 mb-4">
+            ERP SEARCH ENGINE
+          </h1>
+          
+          <div class="search">
+          <form method="POST" enctype="multipart/form-data" action ="{% url 'po_dtl' %}">
+                  {% csrf_token %}
+                        
+              <div class="form-row">
+                  <div class="col-md-4 mb-3">
+                    <label class="sr-only">PO NUMBER</label>
+                    <input type="text" name="a" class="form-control" placeholder="PO NUMBER">
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label class="sr-only">PO DATE</label>
+                    <input type="text" name="b" class="form-control" placeholder="PO DATE">
+                  </div>
+		                <div class="col-md-4 mb-3">
+                    <label class="sr-only">DESC</label>
+                    <input type="text" name="c" class="form-control" placeholder="DESCRIPTION">
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label class="sr-only">APPR</label>
+                    <input type="text" name="d" class="form-control" placeholder="APPROVED DATE">
+                  </div>
+		              <div class="col-md-4 mb-3">
+                  <label class="sr-only">SUPP</label>
+                  <input type="text" name="e" class="form-control" placeholder="SUPPLIER CODE">
+                 </div>
+                 </div>
+              <!-- Form Row 2 -->
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label class="sr-only">BUTTON</label>          
+              <button class="btn btn-secondary btn-block mt-4" type="submit">Search</button>
+              
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+       
+
+  
+
+  {% endblock %}
